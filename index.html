@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>16207_act</title>
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; }
+    #panorama { width: 100%; height: 100%; }
+  </style>
+</head>
+<body>
+  <div id="panorama"></div>
+
+  <!-- Biblioteki -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.105.2/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/pchen66/panolens.js@0.10.2/build/panolens.min.js"></script>
+
+  <script>
+    const pano = new PANOLENS.ImagePanorama('temp.jpeg');
+
+    const viewer = new PANOLENS.Viewer({
+      container: document.getElementById('panorama'),
+      controlBar: false,
+      autoRotate: true,
+      autoRotateSpeed: 0.3
+    });
+
+    viewer.add(pano);
+  </script>
+</body>
+</html>
