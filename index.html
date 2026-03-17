@@ -65,9 +65,8 @@
   <script src="https://cdn.jsdelivr.net/gh/pchen66/panolens.js@0.10.2/build/panolens.min.js"></script>
 
   <script>
-    // panoramy
-    const panoOld = new PANOLENS.ImagePanorama('test.jpeg'); // 14/03/26
-    const panoNew = new PANOLENS.ImagePanorama('cc.jpeg');   // 16/03/26
+    const panoOld = new PANOLENS.ImagePanorama('test.jpeg');
+    const panoNew = new PANOLENS.ImagePanorama('cc.jpeg');
 
     const viewer = new PANOLENS.Viewer({
       container: document.querySelector('#panorama'),
@@ -77,8 +76,14 @@
     viewer.add(panoOld);
     viewer.add(panoNew);
 
-    // startowa panorama
-    viewer.setPanorama(panoOld);
+    const params = new URLSearchParams(window.location.search);
+    const selectedPano = params.get('pano');
+
+    if (selectedPano === 'new') {
+      viewer.setPanorama(panoNew);
+    } else {
+      viewer.setPanorama(panoOld);
+    }
   </script>
 
 </body>
