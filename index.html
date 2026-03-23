@@ -73,6 +73,24 @@
       autoRotate: false
     });
 
+    // hotspot: test.jpeg -> cc.jpeg
+    const spotToNew = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
+    spotToNew.position.set(900, -350, -4800);
+    spotToNew.addHoverText('Go to 16/03/26');
+    spotToNew.addEventListener('click', () => {
+      viewer.setPanorama(panoNew);
+    });
+    panoOld.add(spotToNew);
+
+    // hotspot: cc.jpeg -> test.jpeg
+    const spotToOld = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
+    spotToOld.position.set(-700, -250, -4800);
+    spotToOld.addHoverText('Back to 14/03/26');
+    spotToOld.addEventListener('click', () => {
+      viewer.setPanorama(panoOld);
+    });
+    panoNew.add(spotToOld);
+
     viewer.add(panoOld);
     viewer.add(panoNew);
 
