@@ -75,8 +75,8 @@
 
     // hotspot: test.jpeg -> cc.jpeg
     const spotToNew = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
-    spotToNew.position.set(900, -350, -4800);
-    spotToNew.addHoverText('Go to 16/03/26');
+    spotToNew.position.set(-700, -350, -4800);
+    spotToNew.addHoverText('Go to');
     spotToNew.addEventListener('click', () => {
       viewer.setPanorama(panoNew);
     });
@@ -84,8 +84,8 @@
 
     // hotspot: cc.jpeg -> test.jpeg
     const spotToOld = new PANOLENS.Infospot(350, PANOLENS.DataImage.Info);
-    spotToOld.position.set(-700, -250, -4800);
-    spotToOld.addHoverText('Back to 14/03/26');
+    spotToOld.position.set(900, -350, -4800);
+    spotToOld.addHoverText('Go to');
     spotToOld.addEventListener('click', () => {
       viewer.setPanorama(panoOld);
     });
